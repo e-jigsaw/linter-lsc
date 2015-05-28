@@ -21,10 +21,11 @@ class LinterLsc extends Linter
 
   constructor: (editor) ->
     super(editor)
-    atom.config.observe 'linter-lsc.lscExecutablePath', =>
-      @executablePath = atom.config.get 'linter-lsc.lscExecutablePath'
+    @configSubscription = atom.config.observe 'linter-lsc.lscExecutablePath', (lscExecutablePath)=>
+      @executablePath = lscExecutablePath
 
   destroy: ->
-    atom.config.unobserve 'linter-lsc.lscExecutablePath'
+    super
+    @configSubscription.dispose()
 
 module.exports = LinterLsc
