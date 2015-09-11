@@ -2,6 +2,9 @@
 lsc = require 'atom-livescript'
 
 module.exports =
+  activate: ->
+    require('atom-package-deps').install 'linter-lsc'
+
   provideLinter: ->
     grammarScopes: ['source.livescript']
     scope: 'file'

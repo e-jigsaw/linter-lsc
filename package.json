@@ -1,15 +1,19 @@
 {
   "name": "linter-lsc",
   "main": "./lib/init",
-  "version": "2.0.1",
+  "version": "2.2.3",
   "description": "Atom linter plugin for LiveScript, using lsc.",
   "repository": "https://github.com/AtomLinter/linter-lsc.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
+  "package-deps": {
+    "linter": "^1.5.0"
+  },
   "dependencies": {
-    "atom-livescript": "0.0.1"
+    "atom-livescript": "0.0.1",
+    "atom-package-deps": "^2.1.0"
   },
   "providedServices": {
     "linter": {
